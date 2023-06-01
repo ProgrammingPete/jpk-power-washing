@@ -1,7 +1,5 @@
 ##### This is an exapmle of a company website. It's fully responsive, modern and open source.
-# <a target="_blank" href="https://darkleas.github.io/company-website-reactjs/">Demo Link</a>
-# Lets see what we have in the website:
-![alt text](companywebsitegif.gif)
+
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
