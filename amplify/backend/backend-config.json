@@ -1,0 +1,71 @@
+{
+  "api": {
+    "jpkpowerwashing": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "function": {
+    "contactformhandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "jpkpowerwashing"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_contactformhandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactformhandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactformhandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactformhandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactformhandler_sesEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactformhandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactformhandler_sesEmailMaster": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactformhandler"
+        }
+      ]
+    }
+  }
+}

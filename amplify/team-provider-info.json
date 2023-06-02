@@ -1,0 +1,28 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify94ad53d781254-staging-10536-authRole",
+      "UnauthRoleArn": "arn:aws:iam::029238154714:role/amplify-amplify94ad53d781254-staging-10536-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::029238154714:role/amplify-amplify94ad53d781254-staging-10536-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplify94ad53d781254-staging-10536-deployment",
+      "UnauthRoleName": "amplify-amplify94ad53d781254-staging-10536-unauthRole",
+      "StackName": "amplify-amplify94ad53d781254-staging-10536",
+      "StackId": "arn:aws:cloudformation:us-east-2:029238154714:stack/amplify-amplify94ad53d781254-staging-10536/951d6fc0-00e1-11ee-a7ae-0afb26396627",
+      "AmplifyAppId": "d375fkindpm80g"
+    },
+    "categories": {
+      "function": {
+        "contactformhandler": {
+          "deploymentBucketName": "amplify-amplify94ad53d781254-staging-10536-deployment",
+          "s3Key": "amplify-builds/contactformhandler-422f4a70457441597462-build.zip",
+          "sesEmail": "jake.kenosh@yahoo.com",
+          "sesEmailMaster": "pistolpetepcp@gmail.com"
+        }
+      },
+      "api": {
+        "jpkpowerwashing": {}
+      }
+    }
+  }
+}
