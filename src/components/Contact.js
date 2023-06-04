@@ -16,27 +16,30 @@ function Contact() {
     console.log("name: " + name );
     console.log("email: " + email);
     console.log("message: " + message);
-    if (name && email) {
-      console.log("Calling graphql function");
-      await API.graphql({
-        query: createCandidate,
-        variables: {
-          input: {
-            name,
-            email,
-            message
-          },
-        },
-      })
-      toast.success('Your Message has been sent! ', {
+    try {
+      if (name && email) {
+        console.log("Calling graphql function");
+          await API.graphql({
+            query: createCandidate,
+            variables: {
+              input: {
+                name,
+                email,
+                message
+              },
+            },
+          });
+        toast.success('Your Message has been sent! ', {
+          position: toast.POSITION.TOP_RIGHT
+        });
+      } else {
+        throw new Error("Need to provide name and email.");
+      }
+    } catch (e) {
+      console.error(e);
+      toast.error('Error: Invalid Email Address ', {
         position: toast.POSITION.TOP_RIGHT
       });
-    } else {
-      console.error("Need to provide name and email.");
-      toast.error('Error: Please Provide Name and email. ', {
-        position: toast.POSITION.TOP_RIGHT
-      });
-
     }
     
   }
