@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { API, graphqlOperation } from 'aws-amplify';
-import { createCandidate, updateCandidate } from '../graphql/mutations';
+import { API } from 'aws-amplify';
+import { createCandidate } from '../graphql/mutations';
 import 'react-toastify/dist/ReactToastify.css';
 function Contact() {
   const [formState, setFormState] = useState({
@@ -33,11 +33,13 @@ function Contact() {
           position: toast.POSITION.TOP_RIGHT
         });
       } else {
-        throw new Error("Need to provide name and email.");
+        toast.error('Error: Need to provide name and email address', {
+          position: toast.POSITION.TOP_RIGHT
+        });
       }
-    } catch (e) {
+    } catch (e) { 
       console.error(e);
-      toast.error('Error: Invalid Email Address ', {
+      toast.error('Error: Invalid email Address', {
         position: toast.POSITION.TOP_RIGHT
       });
     }
